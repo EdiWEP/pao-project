@@ -9,7 +9,6 @@ import java.util.Date;
 @Entity
 public class Teacher extends Person {
 
-
     public Teacher() {
     }
 
