@@ -7,16 +7,14 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class Student extends Person {
+public class Teacher extends Person {
 
 
-    public Student() {
+    public Teacher() {
     }
 
-    public Student(String firstName, String lastName, String email, Date dateOfBirth) {
+    public Teacher(String firstName, String lastName, String email, Date dateOfBirth) {
         super(firstName, lastName, email, dateOfBirth);
 
     }
-
-
 }
