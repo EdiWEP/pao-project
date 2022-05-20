@@ -5,7 +5,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import pao.project.entities.Student;
+import pao.project.services.CourseService;
+import pao.project.services.GradeService;
 import pao.project.services.StudentService;
+import pao.project.services.TeacherService;
 
 import java.util.Date;
 import java.util.Scanner;
@@ -15,6 +18,12 @@ public class PaoApplication implements CommandLineRunner {
 
 	@Autowired
 	private StudentService studentService;
+	@Autowired
+	private TeacherService teacherService;
+	@Autowired
+	private CourseService courseService;
+	@Autowired
+	private GradeService gradeService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(PaoApplication.class, args);
