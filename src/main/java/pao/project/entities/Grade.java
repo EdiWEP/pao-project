@@ -25,6 +25,13 @@ public class Grade {
         this.date = date;
     }
 
+    public Grade(int grade, Date date, Student student, Course course) {
+        this.grade = grade;
+        this.date = date;
+        this.student = student;
+        this.course = course;
+    }
+
     public Long getId() {
         return id;
     }

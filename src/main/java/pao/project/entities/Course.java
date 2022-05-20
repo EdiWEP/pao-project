@@ -2,6 +2,7 @@ package pao.project.entities;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -28,6 +29,16 @@ public class Course {
     public Course(String name, int credits) {
         this.name = name;
         this.credits = credits;
+        this.students = new HashSet<>();
+        this.grades = new HashSet<>();
+    }
+
+    public Course(String name, int credits, Teacher teacher, Set<Grade> grades, Set<Student> students) {
+        this.name = name;
+        this.credits = credits;
+        this.teacher = teacher;
+        this.grades = grades;
+        this.students = students;
     }
 
     public Long getId() {

@@ -2,6 +2,7 @@ package pao.project.entities;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -23,8 +24,13 @@ public class Student extends Person {
 
     public Student(String firstName, String lastName, String email, Date dateOfBirth) {
         super(firstName, lastName, email, dateOfBirth);
-
+        courses = new HashSet<>();
+        grades = new HashSet<>();
     }
 
-
+    public Student(String firstName, String lastName, String email, Date dateOfBirth, Set<Course> courses, Set<Grade> grades) {
+        super(firstName, lastName, email, dateOfBirth);
+        this.courses = courses;
+        this.grades = grades;
+    }
 }
