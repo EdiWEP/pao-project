@@ -9,6 +9,8 @@ import pao.project.entities.Teacher;
 import pao.project.interfaces.ICourseService;
 import pao.project.repositories.CourseRepository;
 
+import java.util.List;
+
 @Service
 public class CourseService implements ICourseService {
 
@@ -40,5 +42,13 @@ public class CourseService implements ICourseService {
     public void saveCourse(Course course) {
         logger.logMessage("Saved new course");
         courseRepository.save(course);
+    }
+
+    @Override
+    public void saveCourses(List<Course> courses) {
+        logger.logMessage("Saved multiple new courses");
+        for (Course course : courses) {
+            courseRepository.save(course);
+        }
     }
 }

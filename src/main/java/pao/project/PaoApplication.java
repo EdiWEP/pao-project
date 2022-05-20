@@ -13,9 +13,6 @@ import pao.project.services.StudentService;
 import pao.project.services.TeacherService;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Scanner;
 
 @SpringBootApplication//(exclude = {DataSourceAutoConfiguration.class })
@@ -44,14 +41,13 @@ public class PaoApplication implements CommandLineRunner {
 
 		logger.logMessage("Buna este ora 2");
 
-		Teacher t2 = new Teacher("Valentin", "Petrescu", "valentin_cunoaste@gmail.com", LocalDate.of(88,1,1));
-
-		teacherService.saveTeacher(t2);
-		Teacher t1 = teacherService.getTeacher(2L);
-
-		Course c1 = new Course("Chemistry", 10, t1);
-
-		courseService.saveCourse(c1);
+//		Teacher t2 = new Teacher("Super", "Batman", "jleaguecontact@gmail.com", LocalDate.of(66,1,1));
+//
+//
+//		Course c1 = new Course("Testing", 10, t2);
+//
+//		courseService.saveCourse(c1);
+//		teacherService.saveTeacher(t2);
 //		Teacher t1 = new Teacher("Valentin", "Popescu", "vpop@gmail.com", LocalDate.of(1990,12,12));
 //
 //		teacherService.saveTeacher(t1);

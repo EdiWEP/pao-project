@@ -1,7 +1,10 @@
 package pao.project.interfaces;
 
 
+import pao.project.entities.Course;
 import pao.project.entities.Teacher;
+
+import java.util.List;
 
 public interface ITeacherService {
 
@@ -13,4 +16,6 @@ public interface ITeacherService {
     void updateTeacher(Teacher student);
 
     void saveTeacher(Teacher teacher);
+
+    void saveTeachers(List<Teacher> teachers);
 }

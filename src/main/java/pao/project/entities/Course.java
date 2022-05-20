@@ -20,7 +20,7 @@ public class Course {
     @OneToMany(mappedBy = "course")
     private Set<Grade> grades;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "courses")
     private Set<Student> students;
 
     public Course() {
@@ -38,6 +38,14 @@ public class Course {
         this.credits = credits;
         this.teacher = teacher;
         this.students = new HashSet<>();
+        this.grades = new HashSet<>();
+    }
+
+    public Course(String name, int credits, Teacher teacher, Set<Student> students) {
+        this.name = name;
+        this.credits = credits;
+        this.teacher = teacher;
+        this.students = students;
         this.grades = new HashSet<>();
     }
 

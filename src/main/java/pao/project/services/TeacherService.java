@@ -8,6 +8,8 @@ import pao.project.entities.Teacher;
 import pao.project.interfaces.ITeacherService;
 import pao.project.repositories.TeacherRepository;
 
+import java.util.List;
+
 @Service
 public class TeacherService implements ITeacherService {
 
@@ -39,5 +41,13 @@ public class TeacherService implements ITeacherService {
     public void saveTeacher(Teacher teacher) {
         logger.logMessage("Saved new teacher");
         teacherRepository.save(teacher);
+    }
+
+    @Override
+    public void saveTeachers(List<Teacher> teachers) {
+        logger.logMessage("Saved multiple new teachers");
+        for (Teacher teacher : teachers) {
+            teacherRepository.save(teacher);
+        }
     }
 }

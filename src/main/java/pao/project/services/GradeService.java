@@ -10,6 +10,8 @@ import pao.project.interfaces.IGradeService;
 import pao.project.repositories.GradeRepository;
 import pao.project.repositories.StudentRepository;
 
+import java.util.List;
+
 @Service
 public class GradeService implements IGradeService {
 
@@ -41,5 +43,13 @@ public class GradeService implements IGradeService {
     public void saveGrade(Grade grade) {
         logger.logMessage("Saved new grade");
         gradeRepository.save(grade);
+    }
+
+    @Override
+    public void saveGrades(List<Grade> grades) {
+        logger.logMessage("Saved multiple new grades");
+        for (Grade grade : grades) {
+            gradeRepository.save(grade);
+        }
     }
 }
