@@ -1,6 +1,7 @@
 package pao.project.entities;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @MappedSuperclass
@@ -12,7 +13,7 @@ public class Person {
     private String firstName;
     private String lastName;
     private String email;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
 
     public Person() {
@@ -23,7 +24,7 @@ public class Person {
         dateOfBirth = null;
     }
 
-    public Person(String firstName, String lastName, String email, Date dateOfBirth) {
+    public Person(String firstName, String lastName, String email, LocalDate dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -84,11 +85,11 @@ public class Person {
         this.email = email;
     }
 
-    public Date getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

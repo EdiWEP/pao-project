@@ -1,6 +1,7 @@
 package pao.project.entities;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -14,12 +15,12 @@ public class Teacher extends Person {
     public Teacher() {
     }
 
-    public Teacher(String firstName, String lastName, String email, Date dateOfBirth) {
+    public Teacher(String firstName, String lastName, String email, LocalDate dateOfBirth) {
         super(firstName, lastName, email, dateOfBirth);
         courses = new HashSet<>();
     }
 
-    public Teacher(String firstName, String lastName, String email, Date dateOfBirth, Set<Course> courses) {
+    public Teacher(String firstName, String lastName, String email, LocalDate dateOfBirth, Set<Course> courses) {
         super(firstName, lastName, email, dateOfBirth);
         this.courses = courses;
     }

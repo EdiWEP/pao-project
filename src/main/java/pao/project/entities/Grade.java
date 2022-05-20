@@ -1,6 +1,7 @@
 package pao.project.entities;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -10,7 +11,7 @@ public class Grade {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int grade;
-    private Date date;
+    private LocalDate date;
 
     @ManyToOne
     private Student student;
@@ -20,12 +21,12 @@ public class Grade {
     public Grade() {
     }
 
-    public Grade(int grade, Date date) {
+    public Grade(int grade, LocalDate date) {
         this.grade = grade;
         this.date = date;
     }
 
-    public Grade(int grade, Date date, Student student, Course course) {
+    public Grade(int grade, LocalDate date, Student student, Course course) {
         this.grade = grade;
         this.date = date;
         this.student = student;
@@ -48,11 +49,11 @@ public class Grade {
         this.grade = grade;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 }

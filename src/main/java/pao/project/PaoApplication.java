@@ -4,12 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import pao.project.entities.Course;
 import pao.project.entities.Student;
+import pao.project.entities.Teacher;
 import pao.project.services.CourseService;
 import pao.project.services.GradeService;
 import pao.project.services.StudentService;
 import pao.project.services.TeacherService;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -39,6 +44,17 @@ public class PaoApplication implements CommandLineRunner {
 
 		logger.logMessage("Buna este ora 2");
 
+		Teacher t2 = new Teacher("Valentin", "Petrescu", "valentin_cunoaste@gmail.com", LocalDate.of(88,1,1));
+
+		teacherService.saveTeacher(t2);
+		Teacher t1 = teacherService.getTeacher(2L);
+
+		Course c1 = new Course("Chemistry", 10, t1);
+
+		courseService.saveCourse(c1);
+//		Teacher t1 = new Teacher("Valentin", "Popescu", "vpop@gmail.com", LocalDate.of(1990,12,12));
+//
+//		teacherService.saveTeacher(t1);
 //		Student s2 = new Student("h3i","hello","mee9", new Date());
 //
 //

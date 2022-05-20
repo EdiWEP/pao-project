@@ -33,6 +33,14 @@ public class Course {
         this.grades = new HashSet<>();
     }
 
+    public Course(String name, int credits, Teacher teacher) {
+        this.name = name;
+        this.credits = credits;
+        this.teacher = teacher;
+        this.students = new HashSet<>();
+        this.grades = new HashSet<>();
+    }
+
     public Course(String name, int credits, Teacher teacher, Set<Grade> grades, Set<Student> students) {
         this.name = name;
         this.credits = credits;
