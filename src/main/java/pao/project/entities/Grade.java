@@ -1,9 +1,6 @@
 package pao.project.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -14,6 +11,11 @@ public class Grade {
     private Long id;
     private int grade;
     private Date date;
+
+    @ManyToOne
+    private Student student;
+    @ManyToOne
+    private Course course;
 
     public Grade() {
     }

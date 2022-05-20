@@ -1,14 +1,22 @@
 package pao.project.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 public class Student extends Person {
 
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(
+            name = "student_course",
+            joinColumns = { @JoinColumn(name = "student_id") },
+            inverseJoinColumns = { @JoinColumn(name = "project_id") }
+    )
+    private Set<Course> courses;
+
+    @OneToMany(mappedBy = "student")
+    private Set<Grade> grades;
 
     public Student() {
     }

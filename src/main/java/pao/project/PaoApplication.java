@@ -30,10 +30,10 @@ public class PaoApplication implements CommandLineRunner {
 
 		logger.logMessage("Buna este ora 2");
 
-		Student s2 = new Student("h3i","hello","mee9", new Date());
-
-
-		studentService.saveStudent(s2);
+//		Student s2 = new Student("h3i","hello","mee9", new Date());
+//
+//
+//		studentService.saveStudent(s2);
 
 	}
 

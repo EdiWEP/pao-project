@@ -1,10 +1,8 @@
 package pao.project.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 public class Course {
@@ -14,6 +12,15 @@ public class Course {
     private Long id;
     private String name;
     private int credits;
+
+    @ManyToOne
+    private Teacher teacher;
+
+    @OneToMany(mappedBy = "course")
+    private Set<Grade> grades;
+
+    @ManyToMany
+    private Set<Student> students;
 
     public Course() {
     }
