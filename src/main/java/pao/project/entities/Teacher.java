@@ -24,4 +24,12 @@ public class Teacher extends Person {
         super(firstName, lastName, email, dateOfBirth);
         this.courses = courses;
     }
+
+    public Set<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Set<Course> courses) {
+        this.courses = courses;
+    }
 }

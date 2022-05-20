@@ -1,7 +1,6 @@
 package pao.project.entities;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,7 +19,12 @@ public class Course {
     @OneToMany(mappedBy = "course")
     private Set<Grade> grades;
 
-    @ManyToMany(mappedBy = "courses")
+    @ManyToMany(cascade = {CascadeType.MERGE})
+    @JoinTable(
+            name = "student_course",
+            joinColumns = { @JoinColumn(name = "student_id") },
+            inverseJoinColumns = { @JoinColumn(name = "course_id") }
+    )
     private Set<Student> students;
 
     public Course() {
@@ -79,5 +83,29 @@ public class Course {
 
     public void setCredits(int credits) {
         this.credits = credits;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
+    public Set<Grade> getGrades() {
+        return grades;
+    }
+
+    public void setGrades(Set<Grade> grades) {
+        this.grades = grades;
+    }
+
+    public Set<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Set<Student> students) {
+        this.students = students;
     }
 }

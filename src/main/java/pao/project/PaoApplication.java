@@ -26,6 +26,8 @@ public class PaoApplication implements CommandLineRunner {
 	private CourseService courseService;
 	@Autowired
 	private GradeService gradeService;
+	@Autowired
+	private TestData testData;
 
 	public static void main(String[] args) {
 		SpringApplication.run(PaoApplication.class, args);
@@ -40,6 +42,8 @@ public class PaoApplication implements CommandLineRunner {
 		CsvLogger logger = CsvLogger.getInstance();
 
 		logger.logMessage("Buna este ora 2");
+
+		testData.saveAll();
 
 //		Teacher t2 = new Teacher("Super", "Batman", "jleaguecontact@gmail.com", LocalDate.of(66,1,1));
 //
