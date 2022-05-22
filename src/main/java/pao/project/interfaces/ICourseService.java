@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface ICourseService {
 
+    float getAverageGradeInCourse(Long id);
+
     Course getCourse(Long id);
 
     void deleteCourse(Long id);

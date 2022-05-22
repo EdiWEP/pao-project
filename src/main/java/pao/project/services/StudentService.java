@@ -3,15 +3,14 @@ package pao.project.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pao.project.CsvLogger;
+import pao.project.entities.Course;
 import pao.project.entities.Grade;
 import pao.project.entities.Student;
 import pao.project.entities.Teacher;
 import pao.project.interfaces.IStudentService;
 import pao.project.repositories.StudentRepository;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class StudentService implements IStudentService {
@@ -20,6 +19,55 @@ public class StudentService implements IStudentService {
 
     @Autowired
     private StudentRepository studentRepository;
+
+
+    @Override
+    public Map<Student, Float> getAllAverageGrades() {
+
+        List<Student> students = studentRepository.findAll();
+        Map<Student, Float> gradesMap = new HashMap<Student, Float>();
+
+        for(Student student : students) {
+            gradesMap.put(student, getAverageGradeById(student.getId()));
+        }
+
+        logger.logMessage("Got all average grades");
+        return gradesMap;
+    }
+
+    @Override
+    public float getAverageGradeByIdInCourse(Long id, Course course) {
+        logger.logMessage("Got average grade of student " + id.toString() + " in course " + course.getId());
+        Student student = studentRepository.getById(id);
+
+        Set<Grade> grades = student.getGrades();
+        float sum = 0;
+        int count = 0;
+
+        for (Grade grade : grades) {
+            if (grade.getCourse().getId() == course.getId()) {
+                sum = sum + grade.getGrade();
+                count = count + 1;
+            }
+        }
+
+        return sum / count;
+    }
+
+    @Override
+    public float getAverageGradeById(Long id) {
+        logger.logMessage("Got grade average of student " + id.toString());
+        Student student = studentRepository.getById(id);
+        Set<Grade> grades = student.getGrades();
+        float sum = 0;
+        int numberOfGrades = grades.size();
+
+        for(Grade grade : grades) {
+            sum = sum + grade.getGrade();
+        }
+
+        return sum / numberOfGrades;
+    }
 
     @Override
     public List<Student> getStudentsWithGradesLowerThan(int grade) {

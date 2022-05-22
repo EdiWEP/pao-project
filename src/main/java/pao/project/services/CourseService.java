@@ -10,6 +10,7 @@ import pao.project.interfaces.ICourseService;
 import pao.project.repositories.CourseRepository;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class CourseService implements ICourseService {
@@ -18,6 +19,20 @@ public class CourseService implements ICourseService {
 
     @Autowired
     private CourseRepository courseRepository;
+
+    @Override
+    public float getAverageGradeInCourse(Long id) {
+        logger.logMessage("Got average grade of course " + id.toString());
+        Set<Grade> grades = courseRepository.getById(id).getGrades();
+        float sum = 0;
+        int numberOfGrades = grades.size();
+
+        for(Grade grade : grades) {
+            sum = sum + grade.getGrade();
+        }
+
+        return sum / numberOfGrades;
+    }
 
     @Override
     public Course getCourse(Long id) {
