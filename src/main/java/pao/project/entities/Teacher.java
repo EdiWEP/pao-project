@@ -12,6 +12,7 @@ public class Teacher extends Person {
     @OneToMany(mappedBy="teacher")
     private Set<Course> courses;
 
+
     public Teacher() {
     }
 

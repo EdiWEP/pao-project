@@ -63,22 +63,22 @@ public class TestData {
     private static List<Grade> gradeList = Arrays.asList(
         new Grade(10, LocalDate.now(), studentList.get(0), courseList.get(0)),
         new Grade(10, LocalDate.now(), studentList.get(0), courseList.get(0)),
-        new Grade(9, LocalDate.now(), studentList.get(0), courseList.get(1)),
-        new Grade(9, LocalDate.now(), studentList.get(1), courseList.get(0)),
-        new Grade(5, LocalDate.now(), studentList.get(1), courseList.get(0)),
-        new Grade(6, LocalDate.now(), studentList.get(1), courseList.get(4)),
-        new Grade(3, LocalDate.now(), studentList.get(2), courseList.get(1)),
-        new Grade(5, LocalDate.now(), studentList.get(2), courseList.get(0)),
-        new Grade(8, LocalDate.now(), studentList.get(3), courseList.get(4)),
-        new Grade(10, LocalDate.now(), studentList.get(4), courseList.get(2)),
+        new Grade(9, LocalDate.now(), studentList.get(0), courseList.get(0)),
+        new Grade(9, LocalDate.now(), studentList.get(1), courseList.get(2)),
+        new Grade(5, LocalDate.now(), studentList.get(1), courseList.get(2)),
+        new Grade(6, LocalDate.now(), studentList.get(1), courseList.get(0)),
+        new Grade(3, LocalDate.now(), studentList.get(2), courseList.get(4)),
+        new Grade(5, LocalDate.now(), studentList.get(2), courseList.get(5)),
+        new Grade(8, LocalDate.now(), studentList.get(3), courseList.get(1)),
         new Grade(10, LocalDate.now(), studentList.get(4), courseList.get(3)),
-        new Grade(6, LocalDate.now(), studentList.get(5), courseList.get(2)),
+        new Grade(10, LocalDate.now(), studentList.get(4), courseList.get(4)),
+        new Grade(6, LocalDate.now(), studentList.get(5), courseList.get(3)),
         new Grade(5, LocalDate.now(), studentList.get(5), courseList.get(3)),
-        new Grade(3, LocalDate.now(), studentList.get(5), courseList.get(3)),
-        new Grade(8, LocalDate.now(), studentList.get(6), courseList.get(0)),
-        new Grade(7, LocalDate.now(), studentList.get(6), courseList.get(4)),
-        new Grade(7, LocalDate.now(), studentList.get(6), courseList.get(5)),
-        new Grade(7, LocalDate.now(), studentList.get(6), courseList.get(5))
+        new Grade(3, LocalDate.now(), studentList.get(5), courseList.get(1)),
+        new Grade(8, LocalDate.now(), studentList.get(6), courseList.get(1)),
+        new Grade(7, LocalDate.now(), studentList.get(6), courseList.get(3)),
+        new Grade(7, LocalDate.now(), studentList.get(6), courseList.get(1)),
+        new Grade(7, LocalDate.now(), studentList.get(6), courseList.get(3))
     );
 
     public void saveAll() {
