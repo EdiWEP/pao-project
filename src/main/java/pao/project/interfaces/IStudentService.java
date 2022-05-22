@@ -8,6 +8,8 @@ import java.util.Map;
 
 public interface IStudentService {
 
+    List<Student> getStudentsWithBirthdaysThisMonth();
+
     int getNumberOfGrades(Long id);
 
     float getAverageGradeById(Long id);

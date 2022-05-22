@@ -42,17 +42,19 @@ public class PaoApplication implements CommandLineRunner {
 
 //		testData.saveAll();
 
-		System.out.println(studentService.getNumberOfGrades(1L));
 		System.out.println(teacherService.getNumberOfTaughtCourses(2L));
-		System.out.println(studentService.getStudentsWithGradesLowerThan(5));
-		System.out.println(studentService.getAverageGradeById(1L));
-		System.out.println(studentService.getAllAverageGrades());
-		System.out.println(studentService.getAverageGradeByIdInCourse(1L, courseService.getCourse(1L)));
 		System.out.println(courseService.getAverageGradeInCourse(1L));
 		System.out.println(courseService.getTotalCredits());
 		System.out.println(courseService.getCourseWithHighestCredits());
 		System.out.println(courseService.getStudentsWithoutGrades(1L));
 		System.out.println(courseService.getPercentageOfGradesAbove(1L, 9));
+		System.out.println(studentService.getNumberOfGrades(1L));
+		System.out.println(studentService.getStudentsWithGradesLowerThan(5));
+		System.out.println(studentService.getAverageGradeById(1L));
+		System.out.println(studentService.getAllAverageGrades());
+		System.out.println(studentService.getAverageGradeByIdInCourse(1L, courseService.getCourse(1L)));
+		System.out.println(studentService.getStudentsWithBirthdaysThisMonth());
+		System.out.println(gradeService.getGradesGivenThisMonth());
 	}
 
 }

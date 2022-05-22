@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface IGradeService {
 
+    List<Grade> getGradesGivenThisMonth();
+
     Grade getGrade(Long id);
 
     void deleteGrade(Long id);

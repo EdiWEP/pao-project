@@ -10,6 +10,7 @@ import pao.project.entities.Teacher;
 import pao.project.interfaces.IStudentService;
 import pao.project.repositories.StudentRepository;
 
+import java.time.LocalDate;
 import java.util.*;
 
 @Service
@@ -20,6 +21,20 @@ public class StudentService implements IStudentService {
     @Autowired
     private StudentRepository studentRepository;
 
+    @Override
+    public List<Student> getStudentsWithBirthdaysThisMonth() {
+        logger.logMessage("Got students with birthdays this month");
+        List<Student> students = studentRepository.findAll();
+        List<Student> birthdayStudents = new ArrayList<Student>();
+
+        for(Student student : students) {
+            if (student.getDateOfBirth().getMonth() == LocalDate.now().getMonth()) {
+                birthdayStudents.add(student);
+            }
+        }
+
+        return birthdayStudents;
+    }
 
     @Override
     public Map<Student, Float> getAllAverageGrades() {

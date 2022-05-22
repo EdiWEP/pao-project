@@ -10,6 +10,8 @@ import pao.project.interfaces.IGradeService;
 import pao.project.repositories.GradeRepository;
 import pao.project.repositories.StudentRepository;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -19,6 +21,24 @@ public class GradeService implements IGradeService {
 
     @Autowired
     private GradeRepository gradeRepository;
+
+    @Override
+    public List<Grade> getGradesGivenThisMonth() {
+        logger.logMessage("Got grades given this month");
+        List<Grade> grades = gradeRepository.findAll();
+        List<Grade> gradesThisMonth = new ArrayList<Grade>();
+
+        for(Grade grade : grades) {
+            LocalDate gradeDate = grade.getDate();
+            LocalDate today = LocalDate.now();
+
+            if (gradeDate.getMonth() == today.getMonth() && gradeDate.getYear() == today.getYear()) {
+                gradesThisMonth.add(grade);
+            }
+        }
+
+        return gradesThisMonth;
+    }
 
     @Override
     public Grade getGrade(Long id) {
