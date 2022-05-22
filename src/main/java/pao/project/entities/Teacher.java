@@ -26,6 +26,11 @@ public class Teacher extends Person {
         this.courses = courses;
     }
 
+    @Override
+    public String toString() {
+        return "Teacher" + super.toString().substring(6);
+    }
+
     public Set<Course> getCourses() {
         return courses;
     }

@@ -9,6 +9,8 @@ import java.util.List;
 public interface ITeacherService {
 
 
+    int getNumberOfTaughtCourses(Long id);
+
     Teacher getTeacher(Long id);
 
     void deleteTeacher(Long id);

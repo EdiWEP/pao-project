@@ -61,6 +61,16 @@ public class Course {
         this.students = students;
     }
 
+    @Override
+    public String toString() {
+        return "Course{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", credits=" + credits +
+                ", teacher=" + teacher +
+                '}';
+    }
+
     public Long getId() {
         return id;
     }

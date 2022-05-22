@@ -32,23 +32,23 @@ public class TestData {
 
 
     private static List<Student> studentList = Arrays.asList(
-        new Student("Andrei", "Johnson", "andreij@gmail.com", LocalDate.of(100, 10, 1)),
-        new Student("Big", "Bob", "bbob@yahoo.com", LocalDate.of(101, 9, 2)),
-        new Student("Hailey", "Smith", "haith@example.com", LocalDate.of(101,7,23)),
-        new Student("John", "Wick", "guns@dog.com", LocalDate.of(86, 2, 13)),
-        new Student("Gigel", "Peste", "gigelpenet@yahoo.com", LocalDate.of(101,1,15)),
-        new Student("Robert", "Pisica", "rocat@yahoo.com", LocalDate.of(100,4,24)),
-        new Student("Willy", "Wonka", "chocolate@factory.com", LocalDate.of(100, 5, 25)),
-        new Student("Biggie", "Smalls", "smalls@big.com", LocalDate.of(102, 10, 28))
+        new Student("Andrei", "Johnson", "andreij@gmail.com", LocalDate.of(2000, 10, 1)),
+        new Student("Big", "Bob", "bbob@yahoo.com", LocalDate.of(2001, 9, 2)),
+        new Student("Hailey", "Smith", "haith@example.com", LocalDate.of(2001,7,23)),
+        new Student("John", "Wick", "guns@dog.com", LocalDate.of(1986, 2, 13)),
+        new Student("Gigel", "Peste", "gigelpenet@yahoo.com", LocalDate.of(2001,1,15)),
+        new Student("Robert", "Pisica", "rocat@yahoo.com", LocalDate.of(2000,4,24)),
+        new Student("Willy", "Wonka", "chocolate@factory.com", LocalDate.of(2000, 5, 25)),
+        new Student("Biggie", "Smalls", "smalls@big.com", LocalDate.of(2002, 10, 28))
     );
 
     private static List<Teacher> teacherList = Arrays.asList(
-        new Teacher("Valentin", "Petrescu", "valistie@gmail.com", LocalDate.of(90, 2, 25)),
-        new Teacher("Data", "McMock", "placeholder@example.com", LocalDate.of(87, 11, 29)),
-        new Teacher("Faurt", "Knight", "free@bucks.com", LocalDate.of(88, 12, 22)),
-        new Teacher("Agent", "47", "io@interactive.com", LocalDate.of(80, 10, 10)),
-        new Teacher("Albert", "Einstein", "relative@bingmail.com", LocalDate.of(22, 5, 24)),
-        new Teacher("Amber", "Heard", "sheetsurprise@gmail.com", LocalDate.of(88, 3, 26))
+        new Teacher("Valentin", "Petrescu", "valistie@gmail.com", LocalDate.of(1990, 2, 25)),
+        new Teacher("Data", "McMock", "placeholder@example.com", LocalDate.of(1987, 11, 29)),
+        new Teacher("Faurt", "Knight", "free@bucks.com", LocalDate.of(1988, 12, 22)),
+        new Teacher("Agent", "47", "io@interactive.com", LocalDate.of(1980, 10, 10)),
+        new Teacher("Albert", "Einstein", "relative@bingmail.com", LocalDate.of(1922, 5, 24)),
+        new Teacher("Amber", "Heard", "sheetsurprise@gmail.com", LocalDate.of(1988, 3, 26))
     );
 
     private static List<Course> courseList = Arrays.asList(

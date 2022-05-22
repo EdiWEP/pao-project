@@ -16,7 +16,7 @@ import java.time.LocalDate;
 import java.util.Scanner;
 import java.util.Set;
 
-@SpringBootApplication//(exclude = {DataSourceAutoConfiguration.class })
+@SpringBootApplication
 public class PaoApplication implements CommandLineRunner {
 
 	@Autowired
@@ -40,9 +40,11 @@ public class PaoApplication implements CommandLineRunner {
 		System.out.println("\n\n\n\n\n\n\nAPPLICATION STARTED\n");
 
 
-		testData.saveAll();
+//		testData.saveAll();
 
-
+		System.out.println(studentService.getNumberOfGrades(1L));
+		System.out.println(teacherService.getNumberOfTaughtCourses(2L));
+		System.out.println(studentService.getStudentsWithGradesLowerThan(5));
 	}
 
 }

@@ -19,6 +19,14 @@ public class TeacherService implements ITeacherService {
     private TeacherRepository teacherRepository;
 
     @Override
+    public int getNumberOfTaughtCourses(Long id) {
+        logger.logMessage("Got number of courses taught by teacher " + id.toString());
+        Teacher teacher = teacherRepository.getById(id);
+        return teacher.getCourses().size();
+    }
+
+
+    @Override
     public Teacher getTeacher(Long id) {
         logger.logMessage("Get teacher " + id.toString());
         return teacherRepository.getById(id);

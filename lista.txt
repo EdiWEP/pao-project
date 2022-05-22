@@ -1,0 +1,13 @@
+
+1. Get all students that have birthdays this month
+[DONE] 2. Get all students that have at least 1 grade under a value
+3. Get grade average of a certain student
+4. For a course, Get percentage of grades that are above/below a certain grade
+[DONE] 5. Get number of courses that a teacher teaches
+6. Get course with the highest amount of credits
+7. Get total credit value of all courses
+[DONE] 8. Get number of grades that a student has
+9. Get all grades that were given this month
+10. Get students that are taking a course but don't have any grades in it
+11. Get grade average of a certain student in a certain course
+12. Get the average grade of a course

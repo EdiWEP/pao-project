@@ -57,6 +57,15 @@ public class Grade {
         this.date = date;
     }
 
+    @Override
+    public String toString() {
+        return "Grade{" +
+                "id=" + id +
+                ", grade=" + grade +
+                ", date=" + date +
+                '}';
+    }
+
     public Student getStudent() {
         return student;
     }

@@ -7,6 +7,10 @@ import java.util.List;
 
 public interface IStudentService {
 
+    int getNumberOfGrades(Long id);
+
+    List<Student> getStudentsWithGradesLowerThan(int grade);
+
     Student getStudent(Long id);
 
     void deleteStudent(Long id);

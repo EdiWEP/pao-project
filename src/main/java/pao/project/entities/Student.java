@@ -37,6 +37,14 @@ public class Student extends Person {
         this.grades = grades;
     }
 
+    @Override
+    public String toString() {
+        return "Student" + super.toString().substring(6,super.toString().lastIndexOf('}') -1) +
+                ", courses=" + courses +
+                ", grades=" + grades +
+                '}';
+    }
+
     public Set<Course> getCourses() {
         return courses;
     }
