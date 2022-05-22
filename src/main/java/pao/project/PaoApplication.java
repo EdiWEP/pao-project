@@ -36,29 +36,12 @@ public class PaoApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) {
 
-		Scanner input = new Scanner(System.in);
 		System.out.println("\n\n\n\n\n\n\nAPPLICATION STARTED\n");
 
-		CsvLogger logger = CsvLogger.getInstance();
 
-		logger.logMessage("Buna este ora 2");
+//		testData.saveAll();
 
-		testData.saveAll();
-
-//		Teacher t2 = new Teacher("Super", "Batman", "jleaguecontact@gmail.com", LocalDate.of(66,1,1));
-//
-//
-//		Course c1 = new Course("Testing", 10, t2);
-//
-//		courseService.saveCourse(c1);
-//		teacherService.saveTeacher(t2);
-//		Teacher t1 = new Teacher("Valentin", "Popescu", "vpop@gmail.com", LocalDate.of(1990,12,12));
-//
-//		teacherService.saveTeacher(t1);
-//		Student s2 = new Student("h3i","hello","mee9", new Date());
-//
-//
-//		studentService.saveStudent(s2);
+		teacherService.deleteTeacher(1L);
 
 	}
 

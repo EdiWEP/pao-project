@@ -9,7 +9,7 @@ import java.util.Set;
 @Entity
 public class Teacher extends Person {
 
-    @OneToMany(mappedBy="teacher")
+    @OneToMany(mappedBy="teacher", cascade = {CascadeType.REMOVE})
     private Set<Course> courses;
 
 

@@ -16,7 +16,7 @@ public class Course {
     @ManyToOne
     private Teacher teacher;
 
-    @OneToMany(mappedBy = "course")
+    @OneToMany(mappedBy = "course", cascade = {CascadeType.REMOVE})
     private Set<Grade> grades;
 
     @ManyToMany(cascade = {CascadeType.MERGE})
