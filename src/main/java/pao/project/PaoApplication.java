@@ -14,6 +14,7 @@ import pao.project.services.TeacherService;
 
 import java.time.LocalDate;
 import java.util.Scanner;
+import java.util.Set;
 
 @SpringBootApplication//(exclude = {DataSourceAutoConfiguration.class })
 public class PaoApplication implements CommandLineRunner {
@@ -39,9 +40,8 @@ public class PaoApplication implements CommandLineRunner {
 		System.out.println("\n\n\n\n\n\n\nAPPLICATION STARTED\n");
 
 
-//		testData.saveAll();
+		testData.saveAll();
 
-		teacherService.deleteTeacher(1L);
 
 	}
 

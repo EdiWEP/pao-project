@@ -8,10 +8,17 @@ import java.util.Set;
 @Entity
 public class Student extends Person {
 
-    @ManyToMany(mappedBy = "students")
+//    @ManyToMany(mappedBy = "students", cascade = {CascadeType.PERSIST})
+    @ManyToMany(cascade = {CascadeType.MERGE})
+    @JoinTable(
+            name = "student_course",
+            joinColumns = { @JoinColumn(name = "course_id") },
+            inverseJoinColumns = { @JoinColumn(name = "student_id") }
+    )
     private Set<Course> courses;
 
-    @OneToMany(mappedBy = "student")
+
+    @OneToMany(mappedBy = "student", cascade = CascadeType.REMOVE)
     private Set<Grade> grades;
 
 
